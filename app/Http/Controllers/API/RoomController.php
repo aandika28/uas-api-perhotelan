@@ -15,7 +15,7 @@ class RoomController extends Controller
         $this->middleware('auth:api', ['except' => ['index']]);
     }
 
-     //lihat semua data
+    //lihat semua data
     public function index()
     {
        // $data = Room::all();

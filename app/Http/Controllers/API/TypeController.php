@@ -53,7 +53,7 @@ class TypeController extends Controller
     public function show( $id)
     {
         //$data = Type::where('id' , $id)->first();
-        $data = Type::with('relation_room')->get();
+        $data = Type::with('relation_room')->where('id' , $id)->first();
         if (empty($data)){
             return response()->json([
             'pesan' => 'data tidak ditemukan',

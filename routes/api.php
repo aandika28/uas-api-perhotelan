@@ -16,6 +16,7 @@ use Illuminate\Http\Request;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+
 //Room
 //tampil semua data
 Route::get('kamar', 'API\RoomController@index');//->middleware('auth:api'); cara 1
@@ -48,8 +49,11 @@ Route::get('password', function () {
 
 Route::group(['middleware' => 'api', 'prefix' => 'auth'], function ($router) {
 
+    //membuat token
     Route::post('login', 'AuthController@login');
+    //menghapus token
     Route::post('logout', 'AuthController@logout');
+    //memperbaharui token
     Route::post('refresh', 'AuthController@refresh');
     Route::post('me', 'AuthController@me');
 

@@ -7,7 +7,8 @@ use Illuminate\Database\Eloquent\Model;
 class Type extends Model
 {
      public $timesstamps = false;
-
+    protected $table = 'types';
+    protected $primarykey= 'id';
     protected $fillable = [
         'name', 'description','capacity', 'facility'
     ];
